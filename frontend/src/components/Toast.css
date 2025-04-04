@@ -1,0 +1,53 @@
+/* General Toast Styles */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  /* Success Toast */
+  .toast.success {
+    background-color: #4caf50; /* Green */
+  }
+  
+  /* Error Toast */
+  .toast.error {
+    background-color: #f44336; /* Red */
+  }
+  
+  /* Warning Toast */
+  .toast.warning {
+    background-color: #ff9800; /* Orange */
+  }
+  
+  /* Info Toast */
+  .toast.info {
+    background-color: #2196f3; /* Blue */
+  }
+  
+  /* Fade In and Out Animation */
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }

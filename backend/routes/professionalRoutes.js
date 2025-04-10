@@ -22,7 +22,7 @@ router.route("/profile/:id").get(profile);
 router.route("/profiles").get(users);
 router.route("/profile/:id").delete(userDelete);
 router.route("/ratings").get(ratings);
-router.route("/profile/:id").put(editUser);
+router.route("/profile/:id").put(upload.single('profilePhoto'),editUser);
 
 module.exports = router;
 module.exports.upload = upload;

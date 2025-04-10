@@ -19,6 +19,7 @@
 
 .nav-link, .nav-home {
   color: white;
+  background-color:rgb(6,1,39);
   text-decoration: none;
   cursor: pointer;
   text-transform: capitalize;
@@ -124,11 +125,11 @@
   max-height: calc(100vh - 120px);
 }
 
-.scrollable-content {
+.scrollable-contentC {
   overflow-y: auto;
-  max-height: calc(100vh - 150px);
+  background-color: white;
+  max-height: calc(100vh - 200px);
   padding: 20px;
-  border-radius: 15px;
 }
 
 /* User Details Section */
@@ -251,8 +252,10 @@
 
 /* Service History Section */
 .service-history-list {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
   padding-right:10px ;
   gap: 15px;
 }
@@ -282,7 +285,7 @@
 
 .service-header h4 {
   margin: 0;
-  color: #001f3f;
+  color: #666;
   font-size: 18px;
 }
 

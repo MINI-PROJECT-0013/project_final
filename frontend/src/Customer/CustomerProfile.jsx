@@ -15,7 +15,7 @@ const Navbar = ({ onLogout }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     if (onLogout) onLogout(); // Call onLogout function if provided
-    navigate("/"); // Redirect to login page
+    navigate("/auth"); // Redirect to login page
   };
 
   return (
@@ -338,7 +338,7 @@ const ProfileC = () => {
         </div>
 
         <div className="content">
-          <div className="scrollable-content">
+          <div className="scrollable-contentC">
             {activeTab === 'account' ? (
               <div className="user-details-section">
                 <div className="section-header">

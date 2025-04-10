@@ -421,8 +421,9 @@
   font-style: italic;
 }
 
-.scrollable-content {
+.scrollable-contentP {
   overflow-y: auto;
+  background-color: white;
   max-height: calc(100vh - 200px);
   padding: 20px;
 }

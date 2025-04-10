@@ -120,6 +120,14 @@ const ratings = asyncHandler(async(req, res) => {
 const editUser = asyncHandler(async(req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
+
+    // If there's a file uploaded
+    if (req.file) {
+        // If using memoryStorage, you'll need to upload to Cloudinary or some storage
+        // For now, we'll just simulate storing the file name
+        updatedData.profilePhoto = req.file.path; // Use the uploaded file's path
+    }
+
     try{
         // Find and update the customer
         const updatedProfessional = await Professional.findByIdAndUpdate(
@@ -129,10 +137,10 @@ const editUser = asyncHandler(async(req, res) => {
         );
 
         if (!updatedProfessional) {
-            return res.status(404).json({ message: 'Customer not found' });
+            return res.status(404).json({ message: 'Professional not found' });
         }
 
-        res.status(200).json({ message: 'Profile updated successfully', updatedProfessional });
+        res.status(200).json(updatedProfessional);
     } catch (error) {
         console.error('Error updating profile:', error);
         res.status(500).json({ message: 'Internal server error' });

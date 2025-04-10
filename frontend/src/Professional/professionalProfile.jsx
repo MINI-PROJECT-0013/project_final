@@ -179,6 +179,7 @@ const Profile = () => {
       formData.append('email', editedProfile.email);
       formData.append('location', editedProfile.location);
       formData.append('profession', editedProfile.profession);
+
       
       // Only append the file if a new one was selected
       if (selectedFile) {
@@ -193,6 +194,7 @@ const Profile = () => {
       
       if (response.ok) {
         const updatedData = await response.json();
+        console.log("Response from server:", updatedData);
         setProfile({
           ...editedProfile,
           ...updatedData,
@@ -202,6 +204,8 @@ const Profile = () => {
         setSelectedFile(null);
         setMessage('Profile updated successfully!');
       } else {
+        const errorData = await response.json();
+        console.error("Error response from server:", errorData);
         setMessage('Failed to update profile');
       }
     } catch (error) {
